@@ -1,7 +1,9 @@
+package TwoSum;
+
 import java.util.Arrays;
 import java.util.HashMap;
 
-class AddElementsToHashtable {
+class Solution {
   public static void main(String args[]) {
     int[] nums = new int[] { 2, 3, 5, 7};
     int target = 5;
