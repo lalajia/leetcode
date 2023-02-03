@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 class Solution {
   public static void main(String args[]) {
-    int[] nums = new int[] { 2, 3, 5, 7};
+    int[] nums = new int[] { 2, 3, 5, 7 };
     int target = 5;
     int[] res = twoSum(nums, target);
     System.out.println(Arrays.toString(res));
@@ -35,6 +35,8 @@ class Solution {
         result[1] = i;
 
       }
+
+      /*Has to be put at the end of the for loop so the result[0] could get the first index different than second index*/
       table.put(nums[i], i);
     }
     return result;
