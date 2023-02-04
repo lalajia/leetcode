@@ -30,7 +30,7 @@ import java.util.Stack;
 
 public class Solution {
   public static void main(String args[]) {
-    int[] pieces = new int[] { 7,6,4,3,1 };
+    int[] pieces = new int[] { 7, 6, 4, 3, 1 };
     int res = maxProfit(pieces);
     System.out.println(res);
   }

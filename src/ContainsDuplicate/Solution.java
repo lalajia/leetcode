@@ -23,7 +23,7 @@ import java.util.Set;
 public class Solution {
   public static void main(String args[]) {
     int[] pieces = new int[] { 1, 2, 3, 1 };
-    Boolean res = containsDuplicate(pieces);
+    Boolean res = containsDuplicateMethod(pieces);
     System.out.println(res);
   }
 
@@ -47,8 +47,8 @@ public class Solution {
 
   public static boolean containsDuplicateMethod(int[] nums) {
     Arrays.sort(nums);
-    for(int i = 0; i < nums.length - 1; i++){
-      if(nums[i] == nums[i+1]){
+    for (int i = 0; i < nums.length - 1; i++) {
+      if (nums[i] == nums[i + 1]) {
         return true;
       }
     }
