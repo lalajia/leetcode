@@ -6,9 +6,9 @@ Output: 6
 Explanation: The subarray [4,-1,2,1] has the largest sum 6.*/
 public class Solution {
   public static void main(String args[]) {
-    int[] nums1 = new int[] { -2, -1 };
-    int[] nums2 = new int[] { 1 };
-    int res = maxSubArray(nums1);
+    int[] nums1 = new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+    int[] nums2 = new int[] { -1, -2 };
+    int res = maxSubArray(nums2);
     System.out.println(res);
   }
 
@@ -32,7 +32,21 @@ public class Solution {
       res = Math.max(res + nums[i], nums[i]);
       max = Math.max(max, res);
 
+    /*int max = nums[0];
+    int res = Integer.MIN_VALUE;
+    if (nums.length == 0) {
+      return 0;
+    } else if (nums.length == 1) {
+      return nums[0];
+    }
+    //会保留加上下一位的值，应该是自身之前的值
+    for (int i = 0; i < nums.length - 1; i++) {
+      max = Math.max(max + nums[i + 1], nums[i + 1]);
+      res = Math.max(max, res);
+    }
+    return res;*/
     }
     return max;
+
   }
 }
