@@ -8,13 +8,13 @@ package MaximumProductSubarray;
  */
 public class Solution {
   public static void main(String args[]) {
-    int[] nums = new int[] { -1, -2, -3 };
+    int[] nums = new int[] { -1, 0, -2 };
     int res = maxProduct(nums);
     System.out.println(res);
   }
 
   public static int maxProduct(int[] nums) {
-    int max = nums[0];
+    /*int max = nums[0];
     int min = nums[0];
     int res = nums[0];
     for (int i = 1; i < nums.length; i++) {
@@ -30,6 +30,19 @@ public class Solution {
       res = Math.max(max, res);
 
     }
-    return res;
+    return res;*/
+
+    //brute force from lancy
+    int result = Integer.MIN_VALUE;
+    for (int i = 0; i < nums.length; i++) {
+      int product = 1;
+      int max = Integer.MIN_VALUE;
+      for (int j = i; j < nums.length; j++) {
+        product *= nums[j];
+        max = Math.max(product, max);
+      }
+      result = Math.max(result, max);
+    }
+    return result;
   }
 }

@@ -26,8 +26,6 @@ Constraints:
 1 <= prices.length <= 105
 0 <= prices[i] <= 104*/
 
-import java.util.Stack;
-
 public class Solution {
   public static void main(String args[]) {
     int[] pieces = new int[] { 7, 6, 4, 3, 1 };
@@ -38,18 +36,28 @@ public class Solution {
   public static int maxProfit(int[] prices) {
     int max = 0;
     int min = Integer.MAX_VALUE;
-    for(int i = 0; i < prices.length; i++ ){
+    for (int i = 0; i < prices.length; i++) {
       //只有0，1位置的数compare
-//      if(prices[i] > prices[i + 1]){
-//        return 0;
-//      }
-      if(prices[i] < min) {
+      //      if(prices[i] > prices[i + 1]){
+      //        return 0;
+      //      }
+      if (prices[i] < min) {
         min = prices[i];
-      }
-      else if (prices[i] - min > max){
+      } else if (prices[i] - min > max) {
         max = prices[i] - min;
       }
     }
     return max;
+  }
+
+  //暴力法但超时
+  public static int maxProfitBruteForce(int[] prices) {
+    int res = 0;
+    for (int i = 0; i < prices.length; i++) {
+      for (int j = i; j < prices.length; j++) {
+        res = Math.max(res, prices[j] - prices[i]);
+      }
+    }
+    return res;
   }
 }
