@@ -25,6 +25,7 @@ public class Solution {
     if (nums[0] > 0) {
       return list;
     }
+    /**!!!这里可以写成nums.length-2，不明白为什么*/
     for (int i = 0; i < nums.length; i++) {
       if (i == 0 || nums[i - 1] != nums[i]) {
 

@@ -31,7 +31,7 @@ public class Solution {
       if (nums[mid] == target) {
         return mid;
       }
-      //想不明白为什么一定是等号在前面
+      /**想不明白为什么一定是等号在前面*/
       if (nums[left] <= nums[mid]) {
         //第一次等号没有
         if (nums[left] <= target && target < nums[mid]) {
