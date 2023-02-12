@@ -11,6 +11,7 @@ public class Solution {
     System.out.println(res);
   }
 
+
   public static int missingNumber(int[] nums) {
     int res = 0;
     //    Method 1 sort and find
