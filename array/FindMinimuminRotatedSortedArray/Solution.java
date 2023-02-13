@@ -15,17 +15,17 @@ package FindMinimuminRotatedSortedArray;
  */
 public class Solution {
   public static void main(String args[]) {
-    int[] nums = new int[] { 8, 0, 1, 2 };
-    int res = findMinimumInRotatedSortedArray(nums);
+    int[] nums = new int[] { 4, 5, 6, 7, 1, 2 };
+    int res = findMinimumInRotatedSortedArrayRecur(nums, 0, nums.length - 1);
     System.out.println(res);
   }
 
-  public static int findMinimumInRotatedSortedArray(int[] nums) {
+  public static int findMinimumInRotatedSortedArray(int[] nums, int left, int right) {
     if (nums.length == 1) {
       return nums[0];
     }
-    int left = 0;
-    int right = nums.length - 1;
+    //int left = 0;
+    //int right = nums.length - 1;
     /* 不应该用for loop
     for (int i = 0; i < nums.length; i++) {
 
@@ -49,13 +49,30 @@ public class Solution {
     return nums[left];*/
     while (left <= right) {
       int mid = left + (right - left) / 2;
-      if (nums[mid] < nums[right]) {
+      if (right - left < 0) {
+        return nums[left - 1];
+      } else if (nums[mid] < nums[right]) {
         right = mid;
       } else {
         left = mid + 1;
       }
     }
     return nums[left - 1];
+  }
+
+  public static int findMinimumInRotatedSortedArrayRecur(int[] nums, int left, int right) {
+    if (nums.length == 1) {
+      return nums[0];
+    }
+    int mid = left + (right - left) / 2;
+    if (right - left < 0) {
+      return nums[left - 1];
+    } else if (nums[mid] < nums[right]) {
+      return findMinimumInRotatedSortedArray(nums, left, mid);
+    } else {
+      return findMinimumInRotatedSortedArray(nums, mid + 1, right);
+    }
 
   }
+
 }
