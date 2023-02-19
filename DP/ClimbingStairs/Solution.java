@@ -20,19 +20,19 @@ public class Solution {
 
 //  }
 //
-//  //bottom up
-//
-//  public static int climbStairs(int n) {
+  //bottom up
 
-//  }
-
-  //top down with memo[]
   public static int climbStairs(int n) {
     return 1;
   }
 
-  private static int climbStairs(int n, int[] memo) {
-    return 1;
-  }
+//  //top down with memo[]
+//  public static int climbStairs(int n) {
+//    return 1;
+//  }
+//
+//  private static int climbStairs(int n, int[] memo) {
+//    return 1;
+//  }
 
 }
