@@ -18,6 +18,9 @@ public class Solution {
   }
 
   public static List<List<Integer>> threeSum(int[] nums) {
+    /**
+     * 一定要先sort不然后面的做不了
+     */
     Arrays.sort(nums); //[-2 ,-1, -1, 0, 1, 2]
 
     List<List<Integer>> list = new ArrayList<>();
@@ -25,8 +28,11 @@ public class Solution {
     if (nums[0] > 0) {
       return list;
     }
-    /**!!!这里可以写成nums.length-2，不明白为什么*/
+    /**!!!这里可以写成nums.length-2，不明白为什么
+     * 现在明白了因为最后需要三个数字所以最后两个数字会在while里面loop不需要for里面算了*/
     for (int i = 0; i < nums.length; i++) {
+
+      //nums[i - 1] != nums[i] for loop 不能loop两次同一个数
       if (i == 0 || nums[i - 1] != nums[i]) {
 
         int target = 0 - nums[i];
@@ -43,6 +49,7 @@ public class Solution {
             intList.add(nums[right]);
             list.add(intList);
             //第一次没有考虑后续数字重复的问题。
+            //用while不能用if
             while (left < right && nums[left] == nums[left + 1]) {
               left++;
             }

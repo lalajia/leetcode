@@ -13,18 +13,38 @@ package ContainerWithMostWater;
  */
 public class Solution {
   public static void main(String args[]) {
-    int[] height = new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+    int[] height = new int[] { 2, 3, 10, 5, 7, 8, 9 };
     int res = maxArea(height);
     System.out.println(res);
   }
 
   public static int maxArea(int[] height) {
+    //    int left = 0;
+    //    int right = height.length - 1;
+    //    int maxOne = 0;
+    //    int maxTwo = 0;
+    //    int res = 0;
+    //    while (left < right) {
+    //      if (height[left] < height[right]) {
+    //        maxOne = Math.max(maxOne, Math.min(height[left], height[right]) * (right - left));
+    //        left ++;
+    //      }
+    //      maxTwo = Math.max(maxTwo, Math.min(height[left], height[right]) * (right - left));
+    //      res = Math.max(maxOne, maxTwo);
+    /**
+     * right -- 一定要放在if condition里面不然每次while都会right --
+     */
+    //      right --;
+    //    }
+    //    return res;
+
     if (height.length < 2)
       return 0;
     int left = 0;
     int right = height.length - 1;
     int max = 0;
-    while (left <= right) {
+    //不用等号也行
+    while (left < right) {
       //      max = Math.max(height[left], max);
       //      left++;
       max = Math.max((right - left) * Math.min(height[left], height[right]), max);

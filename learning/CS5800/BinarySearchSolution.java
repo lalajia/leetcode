@@ -13,7 +13,6 @@ public class BinarySearchSolution {
   }
 
   public static int findIndex(int[] nums) {
-
     int target = nums[0];
     int resRight = 0;
     int resLeft = 0;
@@ -33,15 +32,12 @@ public class BinarySearchSolution {
           right = mid - 1;
         }
       }
-
       int res = resRight - resLeft + 1;
       temp[i] = res;
       sum += res * target;
       resLeft = resRight + 1;
       target += 1;
     }
-
-
     return sum;
   }
 
