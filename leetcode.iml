@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/binary" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/learning" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DP" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tree" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
