@@ -46,6 +46,7 @@ public class Solution {
     //compare value
     if (p.val != q.val)
       return false;
+    //一个一个对比的node和val，先走完左边的再走右边的
     Boolean typeLeft = isSameTree(p.left, q.left);
     Boolean typeRight = isSameTree(p.right, q.right);
     if (typeRight && typeLeft) {
