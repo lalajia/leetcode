@@ -11,20 +11,20 @@ public class Diameter {
   // Driver Code
   public static void main(String[] args) {
     Node root = newNode('a');
-    root.left = newNode('b');
+//    root.left = newNode('b');
     root.right = newNode('c');
-    root.left.left = newNode('d');
-    root.left.right = newNode('e');
-    root.left.right.left = newNode('x');
-    //    root.right.left = newNode('f');
-    //    root.right.right = newNode('g');
-    //    root.right.right.right = newNode('k');
-    //    root.right.right.right.right = newNode('p');
-    //    root.right.left.left = newNode('h');
-    //    root.right.left.right = newNode('i');
-    //    root.right.left.left.left = newNode('m');
-    //    root.right.left.left.left.right = newNode('q');
-    //    root.right.left.left.left.right.left = newNode('l');
+//    root.left.left = newNode('d');
+//    root.left.right = newNode('e');
+//    root.left.right.left = newNode('x');
+    root.right.left = newNode('f');
+    root.right.right = newNode('g');
+    root.right.right.right = newNode('k');
+    root.right.right.right.right = newNode('p');
+    root.right.left.left = newNode('h');
+    root.right.left.right = newNode('i');
+    root.right.left.left.left = newNode('m');
+    root.right.left.left.left.right = newNode('q');
+    root.right.left.left.left.right.left = newNode('l');
 
     int output = longestPath(root);
     System.out.print(output);
